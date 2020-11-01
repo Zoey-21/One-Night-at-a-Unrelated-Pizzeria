@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/deer_hit.ogg-e1bd75b85359036acda3a4fe1f4bda51.oggstr"
+
+[deps]
+
+source_file="res://resorces/sounds/deer_hit.ogg"
+dest_files=[ "res://.import/deer_hit.ogg-e1bd75b85359036acda3a4fe1f4bda51.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
