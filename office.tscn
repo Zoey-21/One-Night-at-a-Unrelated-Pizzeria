@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://resorces/cams/cam_flip.png" type="Texture" id=1]
 [ext_resource path="res://resorces/door.png" type="Texture" id=2]
@@ -67,6 +67,7 @@
 [ext_resource path="res://resorces/clock/clock5.png" type="Texture" id=65]
 [ext_resource path="res://resorces/sounds/vent_loop.wav" type="AudioStream" id=66]
 [ext_resource path="res://resorces/black.jpg" type="Texture" id=67]
+[ext_resource path="res://resorces/sounds/error.wav" type="AudioStream" id=68]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.1512, 31.2933 )
@@ -630,6 +631,15 @@ anims/open = SubResource( 5 )
 wait_time = 13.0
 one_shot = true
 
+[node name="break" type="Timer" parent="door_left"]
+wait_time = 10.0
+one_shot = true
+
+[node name="error" type="AudioStreamPlayer2D" parent="door_left"]
+position = Vector2( 285.905, 430.539 )
+stream = ExtResource( 68 )
+volume_db = 10.0
+
 [node name="door_right" type="Area2D" parent="."]
 position = Vector2( 1817.18, 513.323 )
 script = ExtResource( 7 )
@@ -661,6 +671,15 @@ anims/open = SubResource( 7 )
 [node name="opener" type="Timer" parent="door_right"]
 wait_time = 13.0
 one_shot = true
+
+[node name="break" type="Timer" parent="door_right"]
+wait_time = 10.0
+one_shot = true
+
+[node name="error" type="AudioStreamPlayer2D" parent="door_right"]
+position = Vector2( 115.381, 85.48 )
+stream = ExtResource( 68 )
+volume_db = 10.088
 
 [node name="office" type="Sprite" parent="."]
 position = Vector2( 1037.72, 600.881 )
@@ -1240,8 +1259,10 @@ autoplay = true
 [connection signal="input_event" from="darkness_left" to="darkness_left" method="_on_Area2D_input_event"]
 [connection signal="input_event" from="door_left" to="door_left" method="_on_Area2D_input_event"]
 [connection signal="timeout" from="door_left/opener" to="door_left" method="_on_opener_timeout"]
+[connection signal="timeout" from="door_left/break" to="door_left" method="_on_break_timeout"]
 [connection signal="input_event" from="door_right" to="door_right" method="_on_Area2D_input_event"]
 [connection signal="timeout" from="door_right/opener" to="door_right" method="_on_opener_timeout"]
+[connection signal="timeout" from="door_right/break" to="door_right" method="_on_break_timeout"]
 [connection signal="animation_finished" from="jump_monkey" to="." method="_on_jump_deer_animation_finished"]
 [connection signal="animation_finished" from="jump_elefent" to="." method="_on_jump_deer_animation_finished"]
 [connection signal="animation_finished" from="jump_deer" to="." method="_on_jump_deer_animation_finished"]

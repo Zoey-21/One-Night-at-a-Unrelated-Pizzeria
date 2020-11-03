@@ -16,9 +16,9 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 291.0
-margin_top = 90.4583
+margin_top = 87.6299
 margin_right = 685.0
-margin_bottom = 473.458
+margin_bottom = 470.63
 text = "Dear [NAME HERE],
 
 Welcome to your night job. Here are some tips for your job.
@@ -29,7 +29,7 @@ The elephant seems attracted to your office. They also enter by the door. The li
 
 The deer come apart really easily. She moves parts into office, though the vents. If you see a part of her in the vent press the shock button to move her back to the stage. If you are unable to shock her, she will enter the office. If she gets her parts in your office, she might attack.
 
-Also the doors to your office will open after 13 seconds to conserve power.
+Also the doors to your office will open after 13 seconds and be disabled for 10 seconds after opening to conserve power.
 
 Good Luck,
 [COMPANY]"

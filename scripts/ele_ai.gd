@@ -4,8 +4,6 @@ var rand = rand_range(0,2)
 func _physics_process(_delta):
 		if $walk.is_stopped() != false:
 			$walk.start()
-		print($"/root/Global".vars.ele_pos )
-		print($enter.time_left)
 
 		if $"/root/Global".vars.ele_pos == 5 and $enter.is_stopped():
 			$walk.paused = true
